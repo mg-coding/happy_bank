@@ -17,6 +17,10 @@ class BankAccount():
 
 	def add_transaction(self, transaction):
 		self.account_transactions_list.append(transaction) #append(transaction) is adding transactions to the account_transaction_list (so you know what I bought)
+		amount = transaction["amount"]
+		self.account_balance -= amount
+
+
 
 
 
@@ -34,14 +38,24 @@ print boy.account_name
 
 print girl.account_transactions_list
 
-
-
 sample_transaction = {"amount" : 2.50, "currency" : "GBP", "description" : "coffee", "date" : "April 2018"}
+
+
+print girl.account_balance
 girl.add_transaction(sample_transaction)
 print girl.account_transactions_list
+print girl.account_balance
 
+
+print boy.account_balance
 boy.add_transaction(sample_transaction)
 print boy.account_transactions_list
+print boy.account_balance
+
+
+
+
+
 
 
 
